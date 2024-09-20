@@ -55,4 +55,3 @@ O **Sistema de Login com Dashboard de Usuário** é uma aplicação web onde os 
 ---
 
 **Autor**: Harilson Pires
-```
