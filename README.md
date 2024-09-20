@@ -3,7 +3,7 @@
 ## Descrição do Projeto
 O **Sistema de Login com Dashboard de Usuário** é uma aplicação web onde os usuários podem se cadastrar, fazer login e acessar um painel de controle personalizado (dashboard). Cada usuário logado tem acesso a dados ou funcionalidades específicas, como um perfil ou informações personalizadas. O sistema também inclui navegação protegida por autenticação e um design responsivo utilizando Angular Material.
 
-## Instruções para Executar a Aplicação
+## Instruções para Executar
 
 ### Pré-requisitos:
 - [Node.js](https://nodejs.org/) (versão 14 ou superior)
