@@ -1,27 +1,58 @@
-# Restic36Projeto2
+# Sistema de Login com Dashboard de Usuário
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+## Descrição do Projeto
+O **Sistema de Login com Dashboard de Usuário** é uma aplicação web onde os usuários podem se cadastrar, fazer login e acessar um painel de controle personalizado (dashboard). Cada usuário logado tem acesso a dados ou funcionalidades específicas, como um perfil ou informações personalizadas. O sistema também inclui navegação protegida por autenticação e um design responsivo utilizando Angular Material.
 
-## Development server
+## Instruções para Executar a Aplicação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Pré-requisitos:
+- [Node.js](https://nodejs.org/) (versão 14 ou superior)
+- [Angular CLI](https://angular.io/cli)
+- [json-server](https://github.com/typicode/json-server) para simulação de backend
 
-## Code scaffolding
+### Passos:
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+   ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-## Build
+3. **Inicie o json-server:**
+   Em um terminal separado, execute o seguinte comando para simular o backend:
+   ```bash
+   json-server --watch db.json
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+4. **Execute a aplicação Angular:**
+   ```bash
+   ng serve
+   ```
+   A aplicação estará disponível em `http://localhost:4200/`.
 
-## Running unit tests
+## Tecnologias Utilizadas
+- **Angular**: Framework JavaScript para construção de interfaces de usuário dinâmicas.
+- **Angular Material**: Biblioteca de componentes de UI prontos, usados para criar um design responsivo e moderno.
+- **json-server**: Ferramenta para simular um backend RESTful, permitindo simular cadastro e autenticação de usuários.
+- **HTML5, CSS3, TypeScript**: Tecnologias padrão para criação de páginas web dinâmicas e interativas.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Funcionalidades
+- **Cadastro e Login**: Permite que novos usuários se registrem e façam login.
+- **Dashboard Personalizado**: Após o login, o usuário acessa um painel com informações personalizadas.
+- **Proteção de Rotas**: Apenas usuários autenticados podem acessar o dashboard.
+- **Logout**: Usuários podem sair de suas contas a qualquer momento.
 
-## Running end-to-end tests
+## Melhorias Futuras
+- **Integração com um Backend Real**: Migrar a lógica de autenticação para um backend real, usando Node.js, Django ou outro framework.
+- **Sistema de Recuperação de Senha**: Adicionar a funcionalidade para recuperação de senha via e-mail.
+- **Controle de Acessos por Níveis**: Implementar diferentes níveis de acesso com base no tipo de usuário.
+- **Integração com APIs Externas**: Adicionar integração com APIs de terceiros para enriquecer os dados exibidos no dashboard.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Autor**: Harilson Pires
+```
