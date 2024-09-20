@@ -1,0 +1,18 @@
+{
+  "signupUsersList": [
+    {
+      "email": "admin@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "8683",
+      "email": "user@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "725d",
+      "email": "crazyfrog@gmail.com",
+      "password": "123"
+    }
+  ]
+}
