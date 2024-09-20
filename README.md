@@ -13,8 +13,8 @@ O **Sistema de Login com Dashboard de Usuário** é uma aplicação web onde os 
 ### Passos:
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone https://github.com/HarilsonOliver/Restic36-Projeto2.git
+   cd Restic36-Projeto2
    ```
 
 2. **Instale as dependências:**
