@@ -1,18 +1,32 @@
-<div class="container" fxLayout="row" fxLayoutAlign="center none">
+<mat-sidenav-container class="dashboard-container">
+  <mat-sidenav class="dashboard-sidebar" mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item>Home</mat-list-item>
+      <mat-list-item>Menu 2</mat-list-item>
+      <mat-list-item>Menu 3</mat-list-item>
+      <mat-list-item>Menu 4</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
 
-  <div fxFlex="95%">
-    <div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="dashboard-toolbar">
+      <span>Dashboard</span>
+      <span class="spacer"></span>
+      <mat-icon [matMenuTriggerFor]="menu">account_circle</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </mat-toolbar>
 
-      <h2>Welcome back!</h2>
-
+    <div class="dashboard-content">
+      <ul class="cards">
+        <li class="card" *ngFor="let card of cards; let i = index"
+            [ngClass]="{'card--current': i === currentIndex, 'card--next': i === nextIndex, 'card--out': i < currentIndex}"
+            (click)="nextCard()">
+          <h1>{{ card.title }}</h1>
+          <p>{{ card.content }}</p>
+        </li>
+      </ul>
     </div>
-
-    <div class="container" fxLayout="row" fxLayoutAlign="center none">
-      <div fxFlex="50%" class="text-center no-records animate">
-        <mat-icon>dashboard</mat-icon>
-        <p>This is the dashboard.</p>
-      </div>
-      <mat-icon> </mat-icon>
-    </div>
-  </div>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

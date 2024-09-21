@@ -52,6 +52,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,6 +103,7 @@ import { MatTableModule } from '@angular/material/table';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+
   ],
   providers: [
     provideClientHydration(),

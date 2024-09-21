@@ -9,6 +9,12 @@
       <mat-card-content>
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Email" formControlName="email">
+          <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">
+            O email é obrigatório.
+          </mat-error>
+          <mat-error *ngIf="signUpForm.get('email')?.hasError('email')">
+            Insira um email válido.
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
