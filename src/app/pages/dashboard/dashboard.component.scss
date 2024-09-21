@@ -5,12 +5,32 @@
 .dashboard-toolbar {
   display: flex;
   justify-content: space-between;
-  background-color: aqua;
+  background-color: #ccc;
 }
 
 .dashboard-sidebar {
-  width: 150px;
-  background-color: rgb(51, 210, 30);
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0px;
+  border-right-color: rgb(221, 221, 221);
+  background-color: rgb(255, 255, 255);
+}
+
+.home{
+  margin-bottom: 30px;
+}
+
+.menu1{
+  margin-bottom: 30px;
+}
+
+.menu2{
+  margin-bottom: 30px;
+}
+
+.menu3{
+  margin-bottom: 30px;
 }
 
 .spacer {
@@ -23,6 +43,7 @@
   align-items: center;
   margin-right: 300px;
   height: calc(100vh - 64px);
+  background-color: #ffffff;
 }
 
 .cards {
@@ -38,13 +59,13 @@
   top: 0;
   left: 0;
   z-index: 2;
-  background: #ccc;
+  background: #ffffff;
   border-radius: 30px;
   padding: 40px;
   margin-top: 0%;
   width: 180%;
   height: 300%;
-
+  box-shadow: 0 0 10px rgb(117, 117, 117);
   transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
   transform-origin: 0 0;
   transition: transform 0.6s cubic-bezier(.8,.2,.1,0.8) 0.1s,
@@ -62,7 +83,7 @@
   animation: card-out 0.6s cubic-bezier(.8,.2,.1,0.8);
   transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
   z-index: 1;
-  background: #bbb;
+  background: #ffffff;
 }
 
 @keyframes card-out {
@@ -78,6 +99,6 @@
   position: relative;
   z-index: 10;
   opacity: 1;
-  background: #EEE;
+  background: #ffffff;
   transform: rotate(-1deg) translateX(0%) scale(1);
 }

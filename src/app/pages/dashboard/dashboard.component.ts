@@ -25,7 +25,7 @@ export class DashboardComponent {
   }
 
   logout() {
-    localStorage.removeItem('authToken'); // Remova o token de autenticação
-    this.router.navigate(['/login']); // Redirecione para a página de login
+    localStorage.removeItem('authToken'); // Remove o token de autenticação
+    this.router.navigate(['/login']); // Redireciona para a página de login
   }
 }
