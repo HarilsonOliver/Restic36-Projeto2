@@ -1,0 +1,13 @@
+<form class= "form"(ngSubmit)="onSubmit()" #svgForm="ngForm">
+  <mat-form-field appearance="fill">
+    <mat-label>SVG Name</mat-label>
+    <input matInput placeholder="Name" required [(ngModel)]="svg.name" name="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>SVG Content</mat-label>
+    <textarea matInput placeholder="SVG Content" required [(ngModel)]="svg.content" name="content"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Register SVG</button>
+</form>

@@ -5,7 +5,13 @@
 .dashboard-toolbar {
   display: flex;
   justify-content: space-between;
-  background-color: #ccc;
+  background-color: #ffffff;
+}
+
+.user-icon{
+
+  width: 5%;
+
 }
 
 .dashboard-sidebar {
@@ -14,23 +20,21 @@
   justify-content: space-between;
   border-radius: 0px;
   border-right-color: rgb(221, 221, 221);
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(58, 237, 243);
 }
 
 .home{
   margin-bottom: 30px;
+  border-radius: 1px;
+  border-color: black;
+  background-color: aqua;
 }
 
-.menu1{
+.svg-register{
+  border-radius: 1px;
   margin-bottom: 30px;
-}
-
-.menu2{
-  margin-bottom: 30px;
-}
-
-.menu3{
-  margin-bottom: 30px;
+  border-color: black;
+  background-color: aqua;
 }
 
 .spacer {
@@ -41,17 +45,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 300px;
+  margin-right: 0px;
   height: calc(100vh - 64px);
-  background-color: #ffffff;
+  background: #ffffff;
 }
 
 .cards {
   position: relative;
   list-style-type: none;
   padding: 0;
-  max-width: 34em;
   margin: 10% auto 0;
+  background: #ffffff;
+  margin-left: 200px;
+  margin-top: 60px;
+  width: 35%;
+  height: 25%;
+
 }
 
 .card {
@@ -72,6 +81,15 @@
     background 0.4s linear;
   cursor: pointer;
   user-select: none;
+}
+
+.card h1 {
+  position: absolute;
+  top: -59px;
+  right: -2px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .card--next {

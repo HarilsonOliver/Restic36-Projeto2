@@ -1,27 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
-  cards = [
-    { title: 'Card 1', content: 'Content 1' },
-    { title: 'Card 2', content: 'Content 2' },
-    { title: 'Card 3', content: 'Content 3' },
-    { title: 'Card 4', content: 'Content 4' }
-  ];
+export class DashboardComponent implements OnInit{
 
+  constructor(private router: Router, private http: HttpClient, private sanitizer: DomSanitizer) {}
+
+  // Array para armazenar os SVGs dinâmicos
+  svgs: { name: string, content: SafeHtml }[] = [];
   currentIndex = 0;
   nextIndex = 1;
 
-  constructor(private router: Router) {}
+  ngOnInit() {
+    // Buscando os SVGs do servidor
+    this.http.get<any[]>('http://localhost:3000/svgs').subscribe(data => {
+      this.svgs = data.map(svg => ({
+        name: svg.name,
+        content: this.sanitizer.bypassSecurityTrustHtml(svg.content)  // Sanitizando o SVG
+      }));
+    });
+  }
 
   nextCard() {
-    this.currentIndex = (this.currentIndex + 1) % this.cards.length;
-    this.nextIndex = (this.currentIndex + 1) % this.cards.length;
+    this.currentIndex = (this.currentIndex + 1) % this.svgs.length;
+    this.nextIndex = (this.currentIndex + 1) % this.svgs.length;
   }
 
   logout() {

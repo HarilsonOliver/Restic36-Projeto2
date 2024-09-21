@@ -1,7 +1,7 @@
 //Import all material modules
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -51,6 +51,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { SvgRegisterComponent } from './pages/svg-register/svg-register.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { MatTableModule } from '@angular/material/table';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    SvgRegisterComponent,
 
   ],
   imports: [
@@ -107,7 +109,8 @@ import { MatTableModule } from '@angular/material/table';
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
