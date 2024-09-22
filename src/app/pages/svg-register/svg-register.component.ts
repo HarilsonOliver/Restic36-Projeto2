@@ -20,6 +20,7 @@ export class SvgRegisterComponent implements OnInit {
   onSubmit() {
     this.http.post('http://localhost:3000/svgs', this.svg).subscribe(() => {
       this.loadSvgs(); // Recarrega a lista após o registro
+      window.location.reload();
     });
   }
 
@@ -32,6 +33,7 @@ export class SvgRegisterComponent implements OnInit {
   onDelete(id: string) {
     this.http.delete(`http://localhost:3000/svgs/${id}`).subscribe(() => {
       this.loadSvgs(); // Recarrega a lista após a exclusão
+      window.location.reload();
     });
   }
 }
