@@ -26,7 +26,7 @@
       <app-svg-register *ngIf="isRegisteringSvg"></app-svg-register>
 
       <!-- Exibe os cards se não estiver registrando SVG -->
-      <ul class="cards" *ngIf="!isRegisteringSvg">
+      <ul class="cards" *ngIf="!isRegisteringSvg && svgs.length > 0">
         <li class="card"
             *ngFor="let svg of svgs; let i = index"
             [ngClass]="{'card--current': i === currentIndex, 'card--next': i === nextIndex, 'card--out': i < currentIndex}"
@@ -35,6 +35,11 @@
           <div [innerHTML]="svg.content"></div> <!-- Exibe o SVG dinamicamente -->
         </li>
       </ul>
+
+      <!-- Exibe mensagem se não houver SVGs -->
+      <div *ngIf="!isRegisteringSvg && svgs.length === 0" class="no-svgs-message">
+        <p>Nenhum SVG registrado. Faça o registro para visualizar aqui!</p>
+      </div>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
