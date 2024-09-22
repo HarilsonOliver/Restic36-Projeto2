@@ -8,7 +8,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit{
+export class DashboardComponent implements OnInit {
 
   constructor(private router: Router, private http: HttpClient, private sanitizer: DomSanitizer) {}
 
@@ -16,6 +16,9 @@ export class DashboardComponent implements OnInit{
   svgs: { name: string, content: SafeHtml }[] = [];
   currentIndex = 0;
   nextIndex = 1;
+
+  // Controle para o conteúdo do dashboard
+  isRegisteringSvg = false;
 
   ngOnInit() {
     // Buscando os SVGs do servidor
@@ -35,5 +38,15 @@ export class DashboardComponent implements OnInit{
   logout() {
     localStorage.removeItem('authToken'); // Remove o token de autenticação
     this.router.navigate(['/login']); // Redireciona para a página de login
+  }
+
+  // Função para mudar para a tela de registro de SVG
+  openSvgRegister() {
+    this.isRegisteringSvg = true;
+  }
+
+  // Função para voltar para o dashboard
+  goToHome() {
+    this.isRegisteringSvg = false;
   }
 }

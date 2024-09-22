@@ -1,6 +1,24 @@
-.form{
-  height: 100%;
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: #e2e2e2;
+.svg-page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.svg-register-wrapper, .svg-list-wrapper {
+  width: 45%;
+}
+
+.mat-card {
+  padding: 20px;
+}
+
+.mat-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  margin-left: 10px;
 }

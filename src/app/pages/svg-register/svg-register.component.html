@@ -1,13 +1,44 @@
-<form class= "form"(ngSubmit)="onSubmit()" #svgForm="ngForm">
-  <mat-form-field appearance="fill">
-    <mat-label>SVG Name</mat-label>
-    <input matInput placeholder="Name" required [(ngModel)]="svg.name" name="name">
-  </mat-form-field>
+<div class="svg-page-wrapper" fxLayout="row" fxLayoutAlign="space-between center">
 
-  <mat-form-field appearance="fill">
-    <mat-label>SVG Content</mat-label>
-    <textarea matInput placeholder="SVG Content" required [(ngModel)]="svg.content" name="content"></textarea>
-  </mat-form-field>
+  <!-- Divisão para Registro de SVG -->
+  <div class="svg-register-wrapper" fxFlex="45">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Registrar SVG</mat-card-title>
+      </mat-card-header>
 
-  <button mat-raised-button color="primary" type="submit">Register SVG</button>
-</form>
+      <form (ngSubmit)="onSubmit()" #svgForm="ngForm">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Titulo do SVG</mat-label>
+          <input matInput placeholder="Gráfico" required [(ngModel)]="svg.name" name="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Código XML do SVG</mat-label>
+          <textarea matInput placeholder="SVG Content" required [(ngModel)]="svg.content" name="content"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Registrar SVG</button>
+      </form>
+    </mat-card>
+  </div>
+
+  <!-- Divisão para Listagem e Exclusão de SVGs -->
+  <div class="svg-list-wrapper" fxFlex="45">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Lista de SVGs Registrados</mat-card-title>
+      </mat-card-header>
+
+      <mat-list>
+        <mat-list-item *ngFor="let svgItem of svgList">
+          {{ svgItem.name }}
+          <button mat-icon-button color="warn" (click)="onDelete(svgItem.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </div>
+
+</div>
