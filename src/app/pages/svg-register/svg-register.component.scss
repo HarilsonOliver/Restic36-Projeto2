@@ -5,7 +5,7 @@
   padding: 20px;
 }
 
-.box{
+.box {
   padding: 10%;
 }
 
@@ -25,4 +25,21 @@
 
 button {
   margin-left: 10px;
+}
+
+/* Ajustes de layout para telas menores */
+@media (max-width: 960px) {
+  .svg-register-wrapper, .svg-list-wrapper {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .svg-page-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
 }

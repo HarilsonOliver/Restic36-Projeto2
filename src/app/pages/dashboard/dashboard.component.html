@@ -1,13 +1,18 @@
 <mat-sidenav-container class="dashboard-container">
-  <mat-sidenav class="dashboard-sidebar" mode="side" opened>
+  <!-- Sidebar retrátil -->
+  <mat-sidenav #sidenav class="dashboard-sidebar" mode="side" [opened]="opened">
     <mat-nav-list class="sidebar-items">
       <mat-list-item class="home" (click)="goToHome()">Home</mat-list-item>
-      <mat-list-item class="svg-register" (click)="openSvgRegister()">Registrar SVG</mat-list-item>
+      <mat-list-item class="svg-register" (click)="openSvgRegister()">Registrar/Excluir SVG</mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
+    <!-- Toolbar com ícone de menu -->
     <mat-toolbar color="primary" class="dashboard-toolbar">
+      <button mat-icon-button (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+      </button>
       <span>SVGs Analytics</span>
       <span class="spacer"></span>
       <mat-icon class="user-icon" [matMenuTriggerFor]="menu">account_circle</mat-icon>

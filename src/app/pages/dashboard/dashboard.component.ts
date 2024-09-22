@@ -10,6 +10,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class DashboardComponent implements OnInit {
 
+  // Controle de abertura do sidebar
+  opened = true;  // Inicia como aberto
+
   constructor(private router: Router, private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   // Array para armazenar os SVGs dinâmicos
@@ -49,4 +52,10 @@ export class DashboardComponent implements OnInit {
   goToHome() {
     this.isRegisteringSvg = false;
   }
+
+  // Função para abrir/fechar o sidebar
+  toggleSidebar() {
+    this.opened = !this.opened;
+  }
 }
+

@@ -1,7 +1,8 @@
-<div class="svg-page-wrapper" fxLayout="row" fxLayoutAlign="space-between center">
+<div class="svg-page-wrapper" fxLayout="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center stretch">
+
 
   <!-- Divisão para Registro de SVG -->
-  <div class="svg-register-wrapper" fxFlex="45">
+  <div class="svg-register-wrapper" fxFlex="45" fxFlex.lt-md="100">
     <mat-card class="box">
       <mat-card-header>
         <mat-card-title>Registrar SVG</mat-card-title>
@@ -24,12 +25,11 @@
   </div>
 
   <!-- Divisão para Listagem e Exclusão de SVGs -->
-  <div class="svg-list-wrapper" fxFlex="45">
-    <mat-card class="box">
+  <div class="svg-list-wrapper" fxFlex="45" fxFlex.lt-md="100">
+    <mat-card class="box-list">
       <mat-card-header>
         <mat-card-title>Lista de SVGs Registrados</mat-card-title>
       </mat-card-header>
-
       <mat-list>
         <mat-list-item *ngFor="let svgItem of svgList">
           {{ svgItem.name }}
